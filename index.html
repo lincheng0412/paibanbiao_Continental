@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>塞尔维亚合规Continental·4组·早早中中夜夜休休·人员名单</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui,'Segoe UI',Roboto,'Helvetica Neue',sans-serif;}
+html,body{width:100%;height:100%;overflow:hidden;}
+body{background:linear-gradient(145deg,#2a3a4b 0%,#1b2a38 100%);display:flex;justify-content:center;align-items:stretch;padding:.6rem;}
+.schedule-card{width:100%;height:100%;max-width:100%;background:#f5f7fa;border-radius:1.4rem;box-shadow:0 25px 40px -10px rgba(0,0,0,.6),inset 0 1px 4px rgba(255,255,255,.3);padding:.9rem 1.1rem .9rem;display:flex;flex-direction:column;overflow:hidden;}
+.schedule-card::before{content:"";display:block;height:4px;width:70px;background:#c7a34b;border-radius:4px;margin-bottom:.5rem;box-shadow:0 2px 6px rgba(199,163,75,.5);flex-shrink:0;}
+.top-bar{display:flex;justify-content:space-between;align-items:flex-start;gap:.8rem;flex-wrap:wrap;flex-shrink:0;}
+.title-area{flex:1 1 auto;}
+h1{font-size:1.3rem;font-weight:600;letter-spacing:-.02em;color:#1f2e3c;display:flex;align-items:center;gap:.5rem;margin-bottom:.15rem;flex-wrap:wrap;}
+h1 span.badge{background:#c7a34b;color:#0e1a24;font-size:.7rem;font-weight:700;padding:.2rem .8rem;border-radius:30px;letter-spacing:.3px;box-shadow:inset 0 -1px 0 rgba(0,0,0,.1);}
+.lang-switch{display:flex;gap:.3rem;background:#e2e9f2;padding:.25rem;border-radius:40px;flex-shrink:0;align-self:flex-start;}
+.lang-btn{font-family:inherit;font-size:.7rem;font-weight:700;padding:.28rem .75rem;border:none;border-radius:30px;background:transparent;color:#3e5468;cursor:pointer;transition:all .2s;letter-spacing:.2px;}
+.lang-btn:hover{background:rgba(255,255,255,.7);}
+.lang-btn.active{background:#1f2e3c;color:#f0e7d6;box-shadow:0 2px 6px rgba(31,46,60,.3);}
+.subhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem;border-bottom:1px solid #d0dae6;padding-bottom:.4rem;color:#3e5468;font-weight:500;font-size:.78rem;flex-wrap:wrap;gap:.4rem;}
+.subhead .cycle-info{background:#e2e9f2;padding:.25rem .8rem;border-radius:40px;font-size:.72rem;display:flex;align-items:center;gap:.4rem;color:#1f3a4e;}
+.subhead .cycle-info strong{background:#1f2e3c;color:#f0e7d6;padding:.1rem .5rem;border-radius:40px;font-weight:600;font-size:.68rem;}
+.month-selector{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;margin-bottom:.5rem;padding:.4rem .9rem;background:#fff;border-radius:50px;box-shadow:0 4px 12px rgba(0,0,0,.04),0 0 0 1px rgba(0,0,0,.02);flex-shrink:0;}
+.month-selector label{font-weight:600;color:#1f3a4e;font-size:.78rem;display:flex;align-items:center;gap:.35rem;}
+.month-selector input[type="month"]{font-family:inherit;font-size:.78rem;font-weight:500;padding:.3rem .8rem;border:2px solid #d0dae6;border-radius:40px;background:#f9fcff;color:#1f2e3c;outline:none;cursor:pointer;transition:all .2s;}
+.month-selector input[type="month"]:hover,.month-selector input[type="month"]:focus{border-color:#c7a34b;box-shadow:0 0 0 3px rgba(199,163,75,.2);}
+.month-selector .today-btn{font-family:inherit;font-size:.72rem;font-weight:600;padding:.3rem .9rem;border:none;border-radius:40px;background:#1f2e3c;color:#f0e7d6;cursor:pointer;transition:all .2s;box-shadow:0 2px 8px rgba(31,46,60,.3);}
+.month-selector .today-btn:hover{background:#2a4155;transform:translateY(-1px);}
+.month-selector .back-btn{font-family:inherit;font-size:.72rem;font-weight:600;padding:.3rem .9rem;border:2px solid #c7a34b;border-radius:40px;background:#fff8e8;color:#8a5a00;cursor:pointer;transition:all .2s;}
+.month-selector .back-btn:hover{background:#fff1d6;transform:translateY(-1px);}
+.month-selector .back-btn.hidden{display:none;}
+.month-selector .import-btn{font-family:inherit;font-size:.72rem;font-weight:600;padding:.3rem 1rem;border:2px solid #1f2e3c;border-radius:40px;background:#fff;color:#1f2e3c;cursor:pointer;transition:all .2s;}
+.month-selector .import-btn:hover{background:#1f2e3c;color:#f0e7d6;transform:translateY(-1px);}
+.month-selector .export-btn{font-family:inherit;font-size:.72rem;font-weight:600;padding:.3rem 1rem;border:none;border-radius:40px;background:#c7a34b;color:#0e1a24;cursor:pointer;transition:all .2s;box-shadow:0 2px 8px rgba(199,163,75,.4);}
+.month-selector .export-btn:hover{background:#d4b05e;transform:translateY(-1px);}
+.month-selector .month-display{font-weight:600;color:#1f3a4e;font-size:.82rem;margin-left:auto;background:#eef3fa;padding:.3rem .9rem;border-radius:40px;}
+.month-selector .month-display.selected{background:#fff1d6;color:#8a5a00;box-shadow:inset 0 0 0 2px #c7a34b;}
+.table-wrapper{flex:1 1 auto;width:100%;overflow:auto;border-radius:.9rem;background:#fff;box-shadow:0 6px 16px rgba(0,0,0,.05),0 0 0 1px rgba(0,0,0,.02);min-height:0;margin-bottom:.5rem;}
+table{width:100%;border-collapse:collapse;table-layout:fixed;}
+thead th{position:sticky;top:0;z-index:10;background:#1f2e3c;color:#f0e7d6;font-weight:600;font-size:.7rem;letter-spacing:.3px;text-transform:uppercase;padding:.55rem .03rem;text-align:center;border-right:1px solid #324a5e;}
+thead th:last-child{border-right:none;}
+thead th:first-child{border-radius:.9rem 0 0 0;text-align:left;padding-left:.8rem;width:58px;left:0;z-index:20;}
+thead th:last-child{border-radius:0 .9rem 0 0;}
+thead th.clickable{cursor:pointer;transition:background .15s;}
+thead th.clickable:hover{background:#2a4155;}
+thead th.active-day{background:#8a5a00!important;box-shadow:inset 0 0 0 3px #c7a34b;}
+.weekend-col{background:#2a4155;color:#ffefcf;}
+.holiday-col{background:#8a5a00!important;color:#fff3d6!important;box-shadow:inset 0 0 0 2px #c7a34b;}
+.holiday-col .day-name{color:#ffe9b0!important;font-weight:700;}
+.date-header{display:flex;flex-direction:column;align-items:center;gap:.05rem;line-height:1.15;}
+.date-header .day-num{font-size:.82rem;font-weight:700;}
+.date-header .day-name{font-size:.5rem;font-weight:500;opacity:.85;}
+tbody td{padding:.42rem .02rem;text-align:center;font-weight:500;border-bottom:1px solid #e1e9f2;border-right:1px solid #edf2f8;background-color:#fff;color:#1b2a36;transition:background .1s ease;font-size:.62rem;}
+tbody td:last-child{border-right:none;}
+tbody tr:last-child td{border-bottom:none;}
+tbody tr:last-child td:first-child{border-radius:0 0 0 .9rem;}
+tbody tr:last-child td:last-child{border-radius:0 0 0 .9rem 0;}
+.week-sep{border-right:2px solid #c7a34b!important;}
+td.holiday-cell{background:#fffaf0;}
+td.clickable-cell{cursor:pointer;}
+td.clickable-cell:hover{background:#eef3fa;}
+td.active-day-cell{background:#fff8e8!important;box-shadow:inset 0 0 0 2px #c7a34b;}
+.team-badge{display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:.72rem;width:24px;height:24px;background:#f0f4fa;border-radius:50%;color:#1f3a4e;box-shadow:inset 0 0 0 2px #fff,0 2px 6px rgba(0,0,0,.05);}
+.team-badge.b{background:#e7f0fd;color:#1b4e7a;}
+.team-badge.c{background:#fef4e0;color:#9b6b1c;}
+.team-badge.d{background:#fff1d6;color:#8a5a00;}
+.team-cell{font-weight:700;font-size:.82rem;color:#153243;letter-spacing:.3px;background:#f9fcff;position:sticky;left:0;z-index:5;}
+.shift{display:inline-block;padding:.12rem .4rem;border-radius:30px;font-weight:700;font-size:.72rem;letter-spacing:.2px;text-transform:uppercase;box-shadow:0 1px 3px rgba(0,0,0,.05);min-width:44px;white-space:nowrap;line-height:1.4;}
+.shift-morning{background:#e7f0fd;color:#1b4e7a;border:1px solid #b9d3f0;}
+.shift-afternoon{background:#fef4e0;color:#9b6b1c;border:1px solid #f3d9a8;}
+.shift-night{background:#e4e7f0;color:#2b3d5c;border:1px solid #cbd2e3;}
+.shift-rest{background:#e9f3eb;color:#24613b;border:1px solid #c2dfcc;font-weight:600;}
+.highlight-rest{background:#d4edda;}
+td.holiday-cell .shift-morning,td.holiday-cell .shift-afternoon,td.holiday-cell .shift-night{box-shadow:0 0 0 2px #c7a34b,0 1px 3px rgba(0,0,0,.08);}
+.roster-panel{flex:0 0 auto;height:34%;min-height:200px;background:#fff;border-radius:.9rem;box-shadow:0 6px 16px rgba(0,0,0,.05),0 0 0 1px rgba(0,0,0,.02);display:flex;flex-direction:column;overflow:hidden;margin-bottom:.5rem;}
+.roster-header{background:#1f2e3c;color:#f0e7d6;padding:.5rem .9rem;font-weight:700;font-size:.82rem;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;flex-wrap:wrap;gap:.4rem;}
+.roster-header .title{display:flex;align-items:center;gap:.5rem;}
+.roster-header .mode-tag{background:#c7a34b;color:#0e1a24;font-size:.68rem;padding:.12rem .65rem;border-radius:20px;font-weight:700;}
+.roster-header .mode-tag.day-mode{background:#fff1d6;color:#8a5a00;box-shadow:0 0 0 2px #c7a34b;}
+.roster-content{flex:1 1 auto;display:flex;gap:.9rem;padding:.7rem .9rem;overflow:hidden;min-height:0;}
+.roster-all-area{flex:1 1 auto;overflow-y:auto;min-height:0;padding-right:.4rem;display:flex;flex-direction:column;gap:.5rem;}
+.roster-team-line{display:flex;align-items:flex-start;gap:.5rem;background:#f5f8fc;border-radius:12px;padding:.45rem .7rem;border:1px solid #e5ecf5;transition:all .15s;min-height:40px;}
+.roster-team-line:hover{background:#eef3fa;border-color:#c7a34b;}
+.roster-team-line .team-letter{font-weight:700;font-size:.85rem;color:#1f3a4e;flex-shrink:0;min-width:22px;padding-top:1px;}
+.roster-team-line .team-members{display:flex;flex-wrap:wrap;gap:.3rem;flex:1 1 auto;align-items:center;}
+.member-chip{display:inline-flex;align-items:center;gap:.15rem;background:#fff;border-radius:30px;padding:.15rem .5rem .15rem .7rem;font-size:.76rem;color:#1f3a4e;font-weight:600;border:1px solid #dde7f2;transition:all .15s;}
+.member-chip:hover{border-color:#c7a34b;}
+.member-chip.off{background:#f3f3f3;color:#999;border-color:#e0e0e0;}
+.member-chip.extra{background:#fff8e8;border-color:#f3d9a8;}
+.member-chip .remove-btn{background:none;border:none;color:#c0392b;font-size:.85rem;cursor:pointer;padding:0 .2rem;line-height:1;border-radius:50%;transition:all .15s;flex-shrink:0;}
+.member-chip .remove-btn:hover{background:#fdecea;transform:scale(1.15);}
+.member-chip .toggle-btn{background:none;border:none;color:#8a5a00;font-size:.8rem;cursor:pointer;padding:0 .2rem;line-height:1;border-radius:50%;transition:all .15s;flex-shrink:0;font-weight:700;}
+.member-chip .toggle-btn:hover{background:#fff1d6;transform:scale(1.15);}
+.member-chip .shift-picker{display:inline-flex;gap:1px;margin-left:.15rem;}
+.member-chip .sp-btn{font-family:inherit;font-size:.68rem;font-weight:700;width:20px;height:20px;border:1px solid #dde7f2;border-radius:50%;background:#fff;color:#3e5468;cursor:pointer;transition:all .15s;display:flex;align-items:center;justify-content:center;padding:0;line-height:1;}
+.member-chip .sp-btn:hover{border-color:#c7a34b;background:#fff8e8;}
+.member-chip .sp-btn.active-m{background:#e7f0fd;color:#1b4e7a;border-color:#b9d3f0;}
+.member-chip .sp-btn.active-a{background:#fef4e0;color:#9b6b1c;border-color:#f3d9a8;}
+.member-chip .sp-btn.active-n{background:#e4e7f0;color:#2b3d5c;border-color:#cbd2e3;}
+.member-chip .sp-btn.active-r{background:#e9f3eb;color:#24613b;border-color:#c2dfcc;}
+.roster-team-line .empty-hint{color:#a0b0c0;font-size:.72rem;font-style:italic;}
+.roster-add-area{flex:0 0 250px;display:flex;flex-direction:column;justify-content:flex-start;gap:.5rem;border-left:1px dashed #d0dae6;padding-left:.9rem;}
+.roster-add-area .add-label{font-size:.68rem;font-weight:600;color:#6a7e92;text-transform:uppercase;letter-spacing:.5px;}
+.team-picker{display:flex;gap:.3rem;flex-wrap:wrap;}
+.team-pick-btn{font-family:inherit;font-size:.76rem;font-weight:700;width:32px;height:32px;border:2px solid #d0dae6;border-radius:50%;background:#f9fcff;color:#3e5468;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;}
+.team-pick-btn:hover{border-color:#c7a34b;background:#fff;}
+.team-pick-btn.active{background:#1f2e3c;color:#f0e7d6;border-color:#1f2e3c;box-shadow:0 2px 6px rgba(31,46,60,.3);}
+.add-row{display:flex;gap:.35rem;}
+.add-row input{flex:1 1 auto;font-family:inherit;font-size:.78rem;padding:.4rem .8rem;border:2px solid #d0dae6;border-radius:30px;background:#f9fcff;color:#1f2e3c;outline:none;transition:all .2s;min-width:0;}
+.add-row input:focus{border-color:#c7a34b;box-shadow:0 0 0 3px rgba(199,163,75,.2);}
+.add-row button{font-family:inherit;font-size:.74rem;font-weight:700;padding:.4rem .9rem;border:none;border-radius:30px;background:#1f2e3c;color:#f0e7d6;cursor:pointer;transition:all .2s;flex-shrink:0;}
+.add-row button:hover{background:#2a4155;transform:translateY(-1px);}
+.add-target-hint{font-size:.72rem;color:#1f3a4e;font-weight:600;background:#eef3fa;padding:.25rem .7rem;border-radius:30px;display:inline-block;align-self:flex-start;}
+.day-mode-hint{font-size:.7rem;color:#8a5a00;font-weight:600;background:#fff8e8;padding:.3rem .7rem;border-radius:8px;border:1px solid #f3d9a8;line-height:1.4;white-space:pre-line;}
+.day-mode-hint.hidden{display:none;}
+.footer-area{flex-shrink:0;display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;justify-content:space-between;}
+.legend{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-start;gap:.4rem 1.1rem;padding:.4rem .9rem;background:#f0f5fb;border-radius:50px;font-size:.62rem;color:#1d3649;}
+.legend-item{display:flex;align-items:center;gap:.25rem;}
+.legend-color{width:14px;height:14px;border-radius:4px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.05);}
+.legend-morning{background:#e7f0fd;border:1px solid #b9d3f0;}
+.legend-afternoon{background:#fef4e0;border:1px solid #f3d9a8;}
+.legend-night{background:#e4e7f0;border:1px solid #cbd2e3;}
+.legend-rest{background:#e9f3eb;border:1px solid #c2dfcc;}
+.legend-holiday{background:#8a5a00;border:1px solid #c7a34b;}
+.euro-note{font-size:.62rem;display:flex;align-items:center;gap:.5rem;color:#6a7e92;flex-wrap:wrap;}
+.euro-note .flag{display:flex;align-items:center;gap:5px;font-weight:600;color:#2b4b6a;}
+.euro-note .flag i{font-style:normal;font-size:.95rem;}
+
+/* 导入弹窗 */
+.import-modal{position:fixed;inset:0;background:rgba(15,25,35,.6);display:flex;align-items:center;justify-content:center;z-index:9999;padding:1rem;}
+.import-modal.hidden{display:none;}
+.import-box{background:#fff;border-radius:1.2rem;width:100%;max-width:560px;max-height:90vh;display:flex;flex-direction:column;box-shadow:0 25px 50px -12px rgba(0,0,0,.5);overflow:hidden;}
+.import-title{background:#1f2e3c;color:#f0e7d6;padding:.7rem 1rem;font-weight:700;font-size:.9rem;display:flex;align-items:center;justify-content:space-between;}
+.import-close{background:none;border:none;color:#f0e7d6;font-size:1.4rem;cursor:pointer;line-height:1;padding:0 .3rem;border-radius:50%;transition:all .2s;}
+.import-close:hover{background:rgba(255,255,255,.15);}
+.import-hint{background:#fff8e8;color:#8a5a00;font-size:.72rem;padding:.5rem .9rem;line-height:1.5;border-bottom:1px solid #f3d9a8;white-space:pre-line;}
+.import-textarea{flex:1 1 auto;min-height:220px;font-family:'Consolas','Monaco',monospace;font-size:.82rem;padding:.8rem;border:none;outline:none;resize:vertical;line-height:1.6;color:#1f2e3c;background:#f9fcff;}
+.import-textarea:focus{background:#fff;}
+.import-actions{display:flex;align-items:center;justify-content:space-between;padding:.7rem 1rem;border-top:1px solid #e1e9f2;gap:.6rem;flex-wrap:wrap;}
+.import-replace-label{font-size:.76rem;color:#3e5468;display:flex;align-items:center;gap:.35rem;cursor:pointer;font-weight:600;}
+.import-replace-label input{cursor:pointer;width:16px;height:16px;accent-color:#c7a34b;}
+.import-confirm{font-family:inherit;font-size:.78rem;font-weight:700;padding:.45rem 1.4rem;border:none;border-radius:40px;background:#c7a34b;color:#0e1a24;cursor:pointer;transition:all .2s;box-shadow:0 2px 8px rgba(199,163,75,.4);}
+.import-confirm:hover{background:#d4b05e;transform:translateY(-1px);}
+
+@media(max-width:1100px){.roster-content{flex-direction:column;}.roster-add-area{flex:0 0 auto;border-left:none;border-top:1px dashed #d0dae6;padding-left:0;padding-top:.6rem;}}
+@media(max-width:900px){.schedule-card{padding:.8rem .7rem;}h1{font-size:1.1rem;}h1 span.badge{font-size:.62rem;padding:.18rem .6rem;}thead th:first-child{padding-left:.4rem;width:44px;}.team-badge{width:18px;height:18px;font-size:.5rem;}.shift{padding:.06rem .22rem;font-size:.56rem;min-width:34px;}.roster-panel{height:42%;min-height:180px;}.lang-btn{font-size:.62rem;padding:.22rem .6rem;}.member-chip{font-size:.68rem;}.member-chip .sp-btn{width:18px;height:18px;font-size:.6rem;}}
+</style>
+</head>
+<body>
+<div class="schedule-card">
+  <div class="top-bar">
+    <div class="title-area">
+      <h1>
+        <span id="t_mainTitleIcon">⚙️</span>
+        <span id="t_mainTitle"></span>
+        <span class="badge" id="t_mainBadge"></span>
+      </h1>
+      <div class="subhead">
+        <div id="t_subheadLine"></div>
+        <div class="cycle-info">
+          <span id="t_cycleLabel"></span>
+          <strong id="t_cycleValue"></strong>
+        </div>
+      </div>
+    </div>
+    <div class="lang-switch" id="langSwitch">
+      <button class="lang-btn active" data-lang="zh">中文</button>
+      <button class="lang-btn" data-lang="en">English</button>
+      <button class="lang-btn" data-lang="sr">Српски</button>
+    </div>
+  </div>
+
+  <div class="month-selector">
+    <label>
+      <span id="t_monthLabel"></span>
+      <input type="month" id="monthPicker">
+    </label>
+    <button class="today-btn" id="todayBtn"></button>
+    <button class="back-btn hidden" id="backBtn"></button>
+    <button class="import-btn" id="importBtn"></button>
+    <button class="export-btn" id="exportBtn"></button>
+    <div class="month-display" id="monthDisplay"></div>
+  </div>
+
+  <div class="table-wrapper">
+    <table id="scheduleTable">
+      <thead id="tableHead"></thead>
+      <tbody id="tableBody">
+        <tr data-team="A"><td class="team-cell"><span class="team-badge">A</span></td></tr>
+        <tr data-team="B"><td class="team-cell"><span class="team-badge b">B</span></td></tr>
+        <tr data-team="C"><td class="team-cell"><span class="team-badge c">C</span></td></tr>
+        <tr data-team="D"><td class="team-cell"><span class="team-badge d">D</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="roster-panel">
+    <div class="roster-header">
+      <div class="title">
+        <span id="t_rosterTitle"></span>
+        <span class="mode-tag" id="rosterModeTag"></span>
+      </div>
+    </div>
+    <div class="roster-content">
+      <div class="roster-all-area" id="rosterAllArea"></div>
+      <div class="roster-add-area">
+        <div class="day-mode-hint hidden" id="dayModeHint"></div>
+        <div class="add-label" id="t_addToLabel"></div>
+        <div class="team-picker" id="teamPicker">
+          <button class="team-pick-btn active" data-team="A">A</button>
+          <button class="team-pick-btn" data-team="B">B</button>
+          <button class="team-pick-btn" data-team="C">C</button>
+          <button class="team-pick-btn" data-team="D">D</button>
+        </div>
+        <div class="add-target-hint" id="addTargetHint"></div>
+        <div class="add-row">
+          <input type="text" id="rosterInput" maxlength="20">
+          <button id="addBtn"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-area">
+    <div class="legend">
+      <div class="legend-item"><div class="legend-color legend-morning"></div><span id="t_legendMorning"></span></div>
+      <div class="legend-item"><div class="legend-color legend-afternoon"></div><span id="t_legendAfternoon"></span></div>
+      <div class="legend-item"><div class="legend-color legend-night"></div><span id="t_legendNight"></span></div>
+      <div class="legend-item"><div class="legend-color legend-rest"></div><span id="t_legendRest"></span></div>
+      <div class="legend-item"><div class="legend-color legend-holiday"></div><span id="t_legendHoliday"></span></div>
+    </div>
+    <div class="euro-note">
+      <span class="flag"><i>🇷🇸</i> <span id="t_note1"></span></span>
+      <span id="t_note2"></span>
+    </div>
+  </div>
+</div>
+
+<!-- 导入弹窗 -->
+<div class="import-modal hidden" id="importModal">
+  <div class="import-box">
+    <div class="import-title">
+      <span id="t_importTitle">📋 批量导入名单</span>
+      <button class="import-close" id="importClose">×</button>
+    </div>
+    <div class="import-hint" id="t_importHint"></div>
+    <textarea class="import-textarea" id="importTextarea" placeholder="A：张三、李四、王五&#10;B：赵六、孙七&#10;C：周八、吴九&#10;D：郑十、王十一"></textarea>
+    <div class="import-actions">
+      <label class="import-replace-label">
+        <input type="checkbox" id="importReplace"> <span id="t_importReplace">覆盖现有名单</span>
+      </label>
+      <button class="import-confirm" id="importConfirm">确认导入</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  // ============ 多语言 ============
+  const I18N = {
+    zh: {
+      title:'塞尔维亚合规 Continental',
+      badge:'4组·早早中中夜夜休休·人员名单',
+      subhead:'🇷🇸 4组：A / B / C / D · 8天循环 · 每天早/中/夜都有人 · 下班到上班≥12小时',
+      cycleLabel:'轮换顺序', cycleValue:'早→早→中→中→夜→夜→休→休',
+      monthLabel:'📅 选择月份：', todayBtn:'回到本月', backBtn:'↩ 返回全月',
+      importBtn:'📋 导入名单', exportBtn:'📥 导出当月名单',
+      rosterTitle:'📋 人员名单',
+      modeFull:'全月', modeDay:'按日', addTo:'添加到：', addBtn:'+ 添加',
+      inputPlaceholder:'输入姓名，回车添加',
+      teamSuffix:'：',
+      legendMorning:'早班 (06–14)', legendAfternoon:'中班 (14–22)',
+      legendNight:'夜班 (22–06)', legendRest:'休息', legendHoliday:'法定假日',
+      note1:'塞尔维亚合规 · 下班到上班≥12小时 · 夜班不连续超一周',
+      note2:'4组覆盖24/7 · 每班8小时 · 每周至少连续24小时休息 · 假日工作≥110%薪酬',
+      holidayShort:'假日',
+      monthFormatFn: function(y,m){ return y+'年 '+m+'月'; },
+      dayFormatFn: function(y,m,d){ return y+'年'+m+'月'+d+'日'; },
+      dayModeHintFn: function(s){ return '📌 当前为 '+s+' 单日名单模式\n[早][中][夜][休] 切换当天班次，[×] 从当天移除'; },
+      restoreBtn:'恢复', removeBtn:'移除',
+      importTitle:'📋 批量导入名单',
+      importHint:'支持以下格式（任意一种）：\nA：张三、李四、王五\nB：赵六、孙七\n或\nA\n张三\n李四\n\n分隔符支持：、 逗号 空格 分号',
+      importReplace:'覆盖现有名单（不勾选则追加）',
+      importConfirm:'确认导入',
+      importNoName:'没有解析到任何名字，请检查格式',
+      csvTitle:'塞尔维亚合规Continental', csvCompliance:'合规说明:',
+      csvComplianceItems:'下班到上班≥12小时,夜班不连续超一周,每周至少连续24小时休息,假日工作≥110%薪酬',
+      csvRoster:'人员名单', csvTeam:'班组', csvName:'姓名',
+      csvType:'类型', csvTypeBase:'正式', csvTypeTemp:'临时',
+      csvSchedule:'排班表', csvAttendance:'人员出勤表', csvWorkDays:'出勤天数',
+      csvDailyCheck:'每天班次覆盖检查',
+      csvMorning:'早班', csvAfternoon:'中班', csvNight:'夜班', csvRest:'休息',
+      csvHoliday:'假日',
+      csvHolidayReminder:'假日工作薪酬提醒（塞尔维亚《劳动法》第108条）',
+      csvHolidayReminderLine:'假日工作员工有权获得不低于基本工资110%的薪酬加成。',
+      csvHolidayReminderLine2:'请根据上方标有🎉的日期，核对该日上班的班组人员并计算假日工资。',
+      csvHolidayList:'假日列表（本月）', csvNoHoliday:'本月无法定假日',
+      csvWorkingTeams:'上班班组', csvNone:'无',
+      csvFilePrefix:'塞尔维亚合规Continental_人员出勤', csvTeamSuffix:'组', csvPeopleSuffix:'人',
+      csvDayOverrides:'单日人员调整记录', csvOff:'休班', csvNotPresent:'-'
+    },
+    en: {
+      title:'Serbia-Compliant Continental',
+      badge:'4 Crews · 2M-2A-2N-2R · Roster',
+      subhead:'🇷🇸 4 crews: A / B / C / D · 8-day cycle · Morning/Afternoon/Night coverage daily · ≥12h rest between shifts',
+      cycleLabel:'Rotation', cycleValue:'M→M→A→A→N→N→R→R',
+      monthLabel:'📅 Select month:', todayBtn:'Current Month', backBtn:'↩ Back to Full Month',
+      importBtn:'📋 Import Roster', exportBtn:'📥 Export Monthly Roster',
+      rosterTitle:'📋 Roster',
+      modeFull:'Full Month', modeDay:'By Day', addTo:'添加到：', addBtn:'+ Add',
+      inputPlaceholder:'Enter name, press Enter',
+      teamSuffix:'：',   // 固定为中文冒号，三语一致
+      legendMorning:'Morning (06–14)', legendAfternoon:'Afternoon (14–22)',
+      legendNight:'Night (22–06)', legendRest:'Rest', legendHoliday:'Public Holiday',
+      note1:'Serbia compliant · ≥12h rest between shifts · Night shifts ≤1 week',
+      note2:'4 crews cover 24/7 · 8h per shift · ≥24h weekly rest · Holiday work ≥110% pay',
+      holidayShort:'HOL',
+      monthFormatFn: function(y,m){ return ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][m-1]+' '+y; },
+      dayFormatFn: function(y,m,d){ return ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][m-1]+' '+d+', '+y; },
+      dayModeHintFn: function(s){ return '📌 Single-day roster mode: '+s+'\n[M][A][N][R] switch shift, [×] remove from this day'; },
+      restoreBtn:'Restore', removeBtn:'Remove',
+      importTitle:'📋 Bulk Import Roster',
+      importHint:'Supported formats (any one):\nA: John, Jane, Bob\nB: Alice, Tom\nor\nA\nJohn\nJane\n\nSeparators: comma space semicolon',
+      importReplace:'Replace existing roster (unchecked = append)',
+      importConfirm:'Confirm Import',
+      importNoName:'No names parsed, please check the format',
+      csvTitle:'Serbia-Compliant Continental', csvCompliance:'Compliance:',
+      csvComplianceItems:'≥12h rest between shifts,Night shifts ≤1 week,≥24h weekly rest,Holiday work ≥110% pay',
+      csvRoster:'Roster', csvTeam:'Team', csvName:'Name',
+      csvType:'Type', csvTypeBase:'Base', csvTypeTemp:'Temp',
+      csvSchedule:'Schedule', csvAttendance:'Attendance by Person', csvWorkDays:'Work Days',
+      csvDailyCheck:'Daily Shift Coverage Check',
+      csvMorning:'Morning', csvAfternoon:'Afternoon', csvNight:'Night', csvRest:'Rest',
+      csvHoliday:'Holiday',
+      csvHolidayReminder:'Holiday Work Pay Reminder (Serbian Labor Law, Art. 108)',
+      csvHolidayReminderLine:'Employees working on public holidays are entitled to at least 110% of base pay.',
+      csvHolidayReminderLine2:'Please verify teams working on dates marked 🎉 above and calculate holiday pay.',
+      csvHolidayList:'Holiday List (This Month)', csvNoHoliday:'No public holiday this month',
+      csvWorkingTeams:'Working teams', csvNone:'None',
+      csvFilePrefix:'Serbia_Continental_Attendance', csvTeamSuffix:'组', csvPeopleSuffix:' ppl',
+      csvDayOverrides:'Daily Override Records', csvOff:'Off', csvNotPresent:'-'
+    },
+    sr: {
+      title:'Kontinentalni raspored – Srbija',
+      badge:'4 ekipe · 2J-2P-2N-2O · Spisak',
+      subhead:'🇷🇸 4 ekipe: A / B / C / D · ciklus od 8 dana · dnevna pokrivenost jutro/popodne/noć · ≥12h odmora između smena',
+      cycleLabel:'Rotacija', cycleValue:'J→J→P→P→N→N→O→O',
+      monthLabel:'📅 Izaberite mesec:', todayBtn:'Tekući mesec', backBtn:'↩ Nazad na ceo mesec',
+      importBtn:'📋 Uvezi spisak', exportBtn:'📥 Izvezi mesečni raspored',
+      rosterTitle:'📋 Spisak osoblja',
+      modeFull:'Ceo mesec', modeDay:'Po danu', addTo:'添加到：', addBtn:'+ Dodaj',
+      inputPlaceholder:'Unesite ime, pritisnite Enter',
+      teamSuffix:'：',   // 固定为中文冒号
+      legendMorning:'Jutarnja (06–14)', legendAfternoon:'Popodnevna (14–22)',
+      legendNight:'Noćna (22–06)', legendRest:'Odmor', legendHoliday:'Državni praznik',
+      note1:'Usklađeno sa Srbijom · ≥12h odmora između smena · Noćne smene ≤1 nedelje',
+      note2:'4 ekipe pokrivaju 24/7 · 8h po smeni · ≥24h nedeljnog odmora · Rad na praznik ≥110%',
+      holidayShort:'PRAZ',
+      monthFormatFn: function(y,m){ return ['jan','feb','mar','apr','maj','jun','jul','avg','sep','okt','nov','dec'][m-1]+' '+y+'.'; },
+      dayFormatFn: function(y,m,d){ return d+'. '+['jan','feb','mar','apr','maj','jun','jul','avg','sep','okt','nov','dec'][m-1]+' '+y+'.'; },
+      dayModeHintFn: function(s){ return '📌 Režim jednog dana: '+s+'\n[J][P][N][O] promena smene, [×] uklanjanje iz ovog dana'; },
+      restoreBtn:'Vrati', removeBtn:'Ukloni',
+      importTitle:'📋 Masovni uvoz spiska',
+      importHint:'Podržani formati (bilo koji):\nA: Marko, Ana, Jovan\nB: Petar, Milan\nili\nA\nMarko\nAna\n\nSeparatori: zarez razmak tačka-zarez',
+      importReplace:'Zameni postojeći spisak (neoznačeno = dodaj)',
+      importConfirm:'Potvrdi uvoz',
+      importNoName:'Nije pronađeno nijedno ime, proverite format',
+      csvTitle:'Kontinentalni raspored – Srbija', csvCompliance:'Usklađenost:',
+      csvComplianceItems:'≥12h odmora između smena,Noćne smene ≤1 nedelje,≥24h nedeljnog odmora,Rad na praznik ≥110%',
+      csvRoster:'Spisak osoblja', csvTeam:'Ekipa', csvName:'Ime',
+      csvType:'Tip', csvTypeBase:'Osnovni', csvTypeTemp:'Privremeni',
+      csvSchedule:'Raspored', csvAttendance:'Evidencija po osobi', csvWorkDays:'Radnih dana',
+      csvDailyCheck:'Dnevna provera pokrivenosti smena',
+      csvMorning:'Jutarnja', csvAfternoon:'Popodnevna', csvNight:'Noćna', csvRest:'Odmor',
+      csvHoliday:'Praznik',
+      csvHolidayReminder:'Podsetnik o plati za rad na praznik (Zakon o radu, čl. 108)',
+      csvHolidayReminderLine:'Zaposleni koji rade na državni praznik imaju pravo na najmanje 110% osnovne zarade.',
+      csvHolidayReminderLine2:'Proverite ekipe koje rade na datume označene sa 🎉 i obračunajte platu za praznik.',
+      csvHolidayList:'Spisak praznika (ovaj mesec)', csvNoHoliday:'Nema državnih praznika ovog meseca',
+      csvWorkingTeams:'Ekipe koje rade', csvNone:'Nema',
+      csvFilePrefix:'Kontinentalni_raspored_Srbija_Evidencija', csvTeamSuffix:'组', csvPeopleSuffix:' osoba',
+      csvDayOverrides:'Evidencija izmena po danu', csvOff:'Ne radi', csvNotPresent:'-'
+    }
+  };
+
+  const SHIFT_CLASS={morning:'shift-morning',afternoon:'shift-afternoon',night:'shift-night',rest:'shift-rest'};
+  const TEAMS=['A','B','C','D'];
+  const BASE_DATE=new Date(2024,0,1);
+  const CYCLE=['morning','morning','afternoon','afternoon','night','night','rest','rest'];
+  const OFFSET={A:0,B:2,C:4,D:6};
+
+  function getShift(team,date){
+    const diff=Math.floor((date-BASE_DATE)/86400000);
+    const v=diff+OFFSET[team];
+    return CYCLE[((v%8)+8)%8];
+  }
+
+  const HOLIDAYS=[
+    '2026-01-01','2026-01-02','2026-01-07','2026-02-15','2026-02-16','2026-02-17',
+    '2026-04-10','2026-04-11','2026-04-12','2026-04-13','2026-05-01','2026-05-02','2026-11-11',
+    '2027-01-01','2027-01-02','2027-01-07','2027-02-15','2027-02-16',
+    '2027-04-30','2027-05-01','2027-05-02','2027-05-03','2027-05-04','2027-11-11',
+    '2028-01-01','2028-01-02','2028-01-03','2028-01-07','2028-02-15','2028-02-16',
+    '2028-04-14','2028-04-15','2028-04-16','2028-04-17','2028-05-01','2028-05-02','2028-11-11',
+    '2029-01-01','2029-01-02','2029-01-07','2029-02-15','2029-02-16',
+    '2029-04-06','2029-04-07','2029-04-08','2029-04-09','2029-05-01','2029-05-02','2029-11-11',
+    '2030-01-01','2030-01-02','2030-01-07','2030-02-15','2030-02-16',
+    '2030-04-26','2030-04-27','2030-04-28','2030-04-29','2030-05-01','2030-05-02','2030-11-11'
+  ];
+  function isHoliday(date){
+    const y=date.getFullYear();
+    const m=String(date.getMonth()+1).padStart(2,'0');
+    const d=String(date.getDate()).padStart(2,'0');
+    return HOLIDAYS.indexOf(y+'-'+m+'-'+d)>=0;
+  }
+
+  const WEEK={zh:['日','一','二','三','四','五','六'],en:['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],sr:['ned','pon','uto','sre','čet','pet','sub']};
+
+  const STORAGE_KEY='serbia_continental_roster_v4';
+  const LANG_KEY='serbia_continental_lang';
+  let currentLang='zh';
+  let currentYear=0,currentMonth=0;
+  let currentTeam='A';
+  let selectedDay=null;
+  let rosterData={A:[],B:[],C:[],D:[]};
+  let dailyOverrides={};
+
+  function t(key){
+    const v=(I18N[currentLang]&&I18N[currentLang][key]);
+    if(v===undefined||v===null) return I18N.zh[key]||key;
+    return typeof v==='function' ? '' : v;
+  }
+  function fMonth(y,m){
+    const fn=(I18N[currentLang]&&I18N[currentLang].monthFormatFn)||I18N.zh.monthFormatFn;
+    return fn(y,m);
+  }
+  function fDay(y,m,d){
+    const fn=(I18N[currentLang]&&I18N[currentLang].dayFormatFn)||I18N.zh.dayFormatFn;
+    return fn(y,m,d);
+  }
+  function fHint(s){
+    const fn=(I18N[currentLang]&&I18N[currentLang].dayModeHintFn)||I18N.zh.dayModeHintFn;
+    return fn(s);
+  }
+
+  function shiftName(shift){
+    const map={
+      zh:{morning:'早班',afternoon:'中班',night:'夜班',rest:'休息'},
+      en:{morning:'Morn',afternoon:'Aft',night:'Night',rest:'Rest'},
+      sr:{morning:'Jutro',afternoon:'Popodne',night:'Noć',rest:'Odmor'}
+    };
+    return map[currentLang][shift]||shift;
+  }
+  function shiftShort(shift){
+    const map={
+      zh:{morning:'早',afternoon:'中',night:'夜',rest:'休'},
+      en:{morning:'M',afternoon:'A',night:'N',rest:'R'},
+      sr:{morning:'J',afternoon:'P',night:'N',rest:'O'}
+    };
+    return map[currentLang][shift]||shift;
+  }
+
+  function dayKey(y,m,d){return y+'-'+(m+1)+'-'+d;}
+
+  // ============ 数据 ============
+  function loadRoster(){
+    try{
+      const s=localStorage.getItem(STORAGE_KEY);
+      if(s){
+        const p=JSON.parse(s);
+        if(p&&p.rosterData){
+          rosterData={
+            A:Array.isArray(p.rosterData.A)?p.rosterData.A:[],
+            B:Array.isArray(p.rosterData.B)?p.rosterData.B:[],
+            C:Array.isArray(p.rosterData.C)?p.rosterData.C:[],
+            D:Array.isArray(p.rosterData.D)?p.rosterData.D:[]
+          };
+          dailyOverrides=p.dailyOverrides||{};
+        }
+      }
+    }catch(e){console.warn('load err',e);}
+  }
+  function saveRoster(){
+    try{localStorage.setItem(STORAGE_KEY,JSON.stringify({rosterData:rosterData,dailyOverrides:dailyOverrides}));}
+    catch(e){console.warn('save err',e);}
+  }
+
+  // ============ 静态文本 ============
+  function updateStaticText(){
+    document.getElementById('t_mainTitle').textContent=t('title');
+    document.getElementById('t_mainBadge').textContent=t('badge');
+    document.getElementById('t_subheadLine').textContent=t('subhead');
+    document.getElementById('t_cycleLabel').textContent=t('cycleLabel');
+    document.getElementById('t_cycleValue').textContent=t('cycleValue');
+    document.getElementById('t_monthLabel').textContent=t('monthLabel');
+    document.getElementById('todayBtn').textContent=t('todayBtn');
+    document.getElementById('backBtn').textContent=t('backBtn');
+    document.getElementById('importBtn').textContent=t('importBtn');
+    document.getElementById('exportBtn').textContent=t('exportBtn');
+    document.getElementById('t_rosterTitle').textContent=t('rosterTitle');
+    document.getElementById('t_addToLabel').textContent=t('addTo');
+    document.getElementById('addBtn').textContent=t('addBtn');
+    document.getElementById('rosterInput').placeholder=t('inputPlaceholder');
+    document.getElementById('t_legendMorning').textContent=t('legendMorning');
+    document.getElementById('t_legendAfternoon').textContent=t('legendAfternoon');
+    document.getElementById('t_legendNight').textContent=t('legendNight');
+    document.getElementById('t_legendRest').textContent=t('legendRest');
+    document.getElementById('t_legendHoliday').textContent=t('legendHoliday');
+    document.getElementById('t_note1').textContent=t('note1');
+    document.getElementById('t_note2').textContent=t('note2');
+    // 弹窗文案
+    document.getElementById('t_importTitle').textContent=t('importTitle');
+    document.getElementById('t_importHint').textContent=t('importHint');
+    document.getElementById('t_importReplace').textContent=t('importReplace');
+    document.getElementById('importConfirm').textContent=t('importConfirm');
+    updateModeTag();
+    updateAddTargetHint();
+  }
+
+  function updateModeTag(){
+    const tag=document.getElementById('rosterModeTag');
+    const hint=document.getElementById('dayModeHint');
+    if(selectedDay===null){
+      tag.textContent=t('modeFull');
+      tag.classList.remove('day-mode');
+      hint.classList.add('hidden');
+    }else{
+      tag.textContent=t('modeDay')+' · '+selectedDay+'日';
+      tag.classList.add('day-mode');
+      hint.textContent=fHint(fDay(currentYear,currentMonth+1,selectedDay));
+      hint.classList.remove('hidden');
+    }
+  }
+  function updateAddTargetHint(){
+    document.getElementById('addTargetHint').textContent=t('addTo')+' '+currentTeam;
+  }
+
+  // ============ 表格渲染 ============
+  function renderMonth(year,month){
+    currentYear=year;currentMonth=month;
+
+    const thead=document.getElementById('tableHead');
+    const tbody=document.getElementById('tableBody');
+    const monthDisplay=document.getElementById('monthDisplay');
+
+    if(selectedDay===null){
+      monthDisplay.textContent=fMonth(year,month+1);
+      monthDisplay.classList.remove('selected');
+    }
+
+    const dim=new Date(year,month+1,0).getDate();
+    const wn=WEEK[currentLang];
+
+    thead.innerHTML='';
+    const tr=document.createElement('tr');
+    const thTeam=document.createElement('th');
+    thTeam.textContent=t('csvTeam');
+    tr.appendChild(thTeam);
+
+    for(let d=1;d<=dim;d++){
+      const date=new Date(year,month,d);
+      const dow=date.getDay();
+      const isWk=(dow===0||dow===6);
+      const isWkEnd=(dow===0&&d<dim);
+      const isHol=isHoliday(date);
+
+      const th=document.createElement('th');
+      let cls='clickable';
+      if(isWk) cls+=' weekend-col';
+      if(isWkEnd) cls+=' week-sep';
+      if(isHol) cls+=' holiday-col';
+      if(selectedDay===d) cls+=' active-day';
+      th.className=cls;
+      th.dataset.day=d;
+
+      const wrap=document.createElement('div');
+      wrap.className='date-header';
+      const num=document.createElement('span');
+      num.className='day-num';num.textContent=d;
+      const name=document.createElement('span');
+      name.className='day-name';
+      if(isHol) name.textContent=t('holidayShort');
+      else if(currentLang==='zh') name.textContent='周'+wn[dow];
+      else name.textContent=wn[dow];
+      wrap.appendChild(num);wrap.appendChild(name);
+      th.appendChild(wrap);
+      tr.appendChild(th);
+    }
+    thead.appendChild(tr);
+
+    TEAMS.forEach(team=>{
+      const row=tbody.querySelector('tr[data-team="'+team+'"]');
+      while(row.children.length>1) row.removeChild(row.lastChild);
+
+      for(let d=1;d<=dim;d++){
+        const date=new Date(year,month,d);
+        const dow=date.getDay();
+        const shift=getShift(team,date);
+        const isHol=isHoliday(date);
+        const isWkEnd=(dow===0&&d<dim);
+
+        const td=document.createElement('td');
+        let cls='clickable-cell';
+        if(shift==='rest') cls+=' highlight-rest';
+        if(isWkEnd) cls+=' week-sep';
+        if(isHol) cls+=' holiday-cell';
+        if(selectedDay===d) cls+=' active-day-cell';
+        td.className=cls;
+        td.dataset.day=d;
+
+        const sp=document.createElement('span');
+        sp.className='shift '+(SHIFT_CLASS[shift]||'shift-rest');
+        sp.textContent=shiftName(shift);
+        td.appendChild(sp);
+        row.appendChild(td);
+      }
+    });
+
+    thead.querySelectorAll('th.clickable').forEach(th=>{
+      th.onclick=function(){ selectDay(parseInt(this.dataset.day)); };
+    });
+    tbody.querySelectorAll('td.clickable-cell').forEach(td=>{
+      td.onclick=function(){ selectDay(parseInt(this.dataset.day)); };
+    });
+  }
+
+  function selectDay(day){
+    selectedDay=(selectedDay===day)?null:day;
+    document.getElementById('backBtn').classList.toggle('hidden',selectedDay===null);
+    document.getElementById('monthDisplay').classList.toggle('selected',selectedDay!==null);
+    if(selectedDay!==null){
+      document.getElementById('monthDisplay').textContent=fDay(currentYear,currentMonth+1,selectedDay);
+    }else{
+      document.getElementById('monthDisplay').textContent=fMonth(currentYear,currentMonth+1);
+    }
+    updateModeTag();
+    renderMonth(currentYear,currentMonth);
+    renderRosterAll();
+  }
+
+  // ============ 单日数据辅助 ============
+  function getOverride(k,team){
+    if(!dailyOverrides[k]) dailyOverrides[k]={};
+    if(!dailyOverrides[k][team]) dailyOverrides[k][team]={removed:[],shifts:{},extra:[]};
+    const ov=dailyOverrides[k][team];
+    if(!Array.isArray(ov.removed)) ov.removed=[];
+    if(!ov.shifts||typeof ov.shifts!=='object') ov.shifts={};
+    if(!Array.isArray(ov.extra)) ov.extra=[];
+    return ov;
+  }
+
+  function getPersonDayShift(team,name,y,m,d){
+    const k=dayKey(y,m,d);
+    const base=rosterData[team]||[];
+    const ov=(dailyOverrides[k]&&dailyOverrides[k][team])||{removed:[],shifts:{},extra:[]};
+    const isBase=base.indexOf(name)>=0;
+    const inExtra=(ov.extra||[]).indexOf(name)>=0;
+
+    if(isBase && (ov.removed||[]).indexOf(name)>=0) return null;
+    if(!isBase && !inExtra) return null;
+    if(ov.shifts && ov.shifts[name]) return ov.shifts[name];
+
+    const date=new Date(y,m,d);
+    return getShift(team,date);
+  }
+
+  function getDayWorkingMembers(team,y,m,d){
+    const k=dayKey(y,m,d);
+    const base=rosterData[team]||[];
+    const ov=(dailyOverrides[k]&&dailyOverrides[k][team])||{removed:[],shifts:{},extra:[]};
+    const result=[];
+    base.forEach(name=>{
+      if((ov.removed||[]).indexOf(name)>=0) return;
+      const shift=getPersonDayShift(team,name,y,m,d);
+      if(shift!==null && shift!=='rest') result.push(name);
+    });
+    (ov.extra||[]).forEach(name=>{
+      const shift=getPersonDayShift(team,name,y,m,d);
+      if(shift!==null && shift!=='rest') result.push(name);
+    });
+    return result;
+  }
+
+  function getDayRestMembers(team,y,m,d){
+    const k=dayKey(y,m,d);
+    const base=rosterData[team]||[];
+    const ov=(dailyOverrides[k]&&dailyOverrides[k][team])||{removed:[],shifts:{},extra:[]};
+    const result=[];
+    base.forEach(name=>{
+      if((ov.removed||[]).indexOf(name)>=0) return;
+      const shift=getPersonDayShift(team,name,y,m,d);
+      if(shift==='rest') result.push(name);
+    });
+    (ov.extra||[]).forEach(name=>{
+      const shift=getPersonDayShift(team,name,y,m,d);
+      if(shift==='rest') result.push(name);
+    });
+    return result;
+  }
+
+  function renderRosterAll(){
+    const area=document.getElementById('rosterAllArea');
+    area.innerHTML='';
+    TEAMS.forEach(team=>{
+      const line=document.createElement('div');
+      line.className='roster-team-line';
+      const letter=document.createElement('div');
+      letter.className='team-letter';
+      // 固定格式：A： / B： / C： / D：
+      letter.textContent=team+'：';
+      line.appendChild(letter);
+
+      const wrap=document.createElement('div');
+      wrap.className='team-members';
+
+      if(selectedDay===null){
+        const members=rosterData[team];
+        if(members.length===0){
+          const e=document.createElement('span');
+          e.className='empty-hint';e.textContent='—';wrap.appendChild(e);
+        }else{
+          members.forEach((name,i)=>wrap.appendChild(makeChipFull(team,name,i)));
+        }
+      }else{
+        const k=dayKey(currentYear,currentMonth,selectedDay);
+        const ov=(dailyOverrides[k]&&dailyOverrides[k][team])||{removed:[],shifts:{},extra:[]};
+        const working=getDayWorkingMembers(team,currentYear,currentMonth,selectedDay);
+        const resting=getDayRestMembers(team,currentYear,currentMonth,selectedDay);
+
+        if(working.length===0&&resting.length===0){
+          const e=document.createElement('span');
+          e.className='empty-hint';e.textContent='—';wrap.appendChild(e);
+        }
+
+        working.forEach(name=>{
+          const isExtra=(ov.extra||[]).indexOf(name)>=0;
+          wrap.appendChild(makeChipDay(team,name,selectedDay,isExtra,false));
+        });
+        resting.forEach(name=>{
+          const isExtra=(ov.extra||[]).indexOf(name)>=0;
+          wrap.appendChild(makeChipDay(team,name,selectedDay,isExtra,true));
+        });
+      }
+      line.appendChild(wrap);
+      area.appendChild(line);
+    });
+  }
+
+  function makeChipFull(team,name,index){
+    const chip=document.createElement('span');
+    chip.className='member-chip';
+    const ns=document.createElement('span');
+    ns.textContent=name;
+    chip.appendChild(ns);
+
+    const b=document.createElement('button');
+    b.className='remove-btn';b.textContent='×';b.title=t('removeBtn');
+    b.onclick=function(){
+      rosterData[team].splice(index,1);
+      saveRoster();renderRosterAll();
+    };
+    chip.appendChild(b);
+    return chip;
+  }
+
+  function makeChipDay(team,name,day,isExtra,isRest){
+    const chip=document.createElement('span');
+    chip.className='member-chip';
+    if(isExtra) chip.classList.add('extra');
+    if(isRest) chip.classList.add('off');
+
+    const ns=document.createElement('span');
+    ns.textContent=name;
+    chip.appendChild(ns);
+
+    const k=dayKey(currentYear,currentMonth,day);
+    const ov=getOverride(k,team);
+    const currentShift=getPersonDayShift(team,name,currentYear,currentMonth,day);
+
+    const picker=document.createElement('span');
+    picker.className='shift-picker';
+
+    const shifts=[
+      {key:'morning',label:shiftShort('morning'),cls:'active-m'},
+      {key:'afternoon',label:shiftShort('afternoon'),cls:'active-a'},
+      {key:'night',label:shiftShort('night'),cls:'active-n'},
+      {key:'rest',label:shiftShort('rest'),cls:'active-r'}
+    ];
+
+    shifts.forEach(s=>{
+      const b=document.createElement('button');
+      b.className='sp-btn';
+      if(currentShift===s.key) b.classList.add(s.cls);
+      b.textContent=s.label;
+      b.title=shiftName(s.key);
+      b.onclick=function(){
+        ov.shifts[name]=s.key;
+        saveRoster();renderRosterAll();
+      };
+      picker.appendChild(b);
+    });
+    chip.appendChild(picker);
+
+    const b=document.createElement('button');
+    b.className='remove-btn';b.textContent='×';b.title=t('removeBtn');
+    b.onclick=function(){
+      if(ov.shifts[name]) delete ov.shifts[name];
+      const ei=ov.extra.indexOf(name);
+      if(ei>=0){
+        ov.extra.splice(ei,1);
+      }else{
+        if(ov.removed.indexOf(name)<0) ov.removed.push(name);
+      }
+      saveRoster();renderRosterAll();
+    };
+    chip.appendChild(b);
+
+    return chip;
+  }
+
+  function addMember(){
+    const input=document.getElementById('rosterInput');
+    const name=input.value.trim();
+    if(!name) return;
+    if(selectedDay===null){
+      if(rosterData[currentTeam].indexOf(name)<0) rosterData[currentTeam].push(name);
+    }else{
+      const k=dayKey(currentYear,currentMonth,selectedDay);
+      const ov=getOverride(k,currentTeam);
+      if(rosterData[currentTeam].indexOf(name)>=0){
+        ov.removed=ov.removed.filter(n=>n!==name);
+      }else{
+        if(ov.extra.indexOf(name)<0) ov.extra.push(name);
+      }
+    }
+    input.value='';
+    saveRoster();renderRosterAll();
+    input.focus();
+  }
+
+  // ============ 批量导入名单 ============
+  const importBtn=document.getElementById('importBtn');
+  const importModal=document.getElementById('importModal');
+  const importClose=document.getElementById('importClose');
+  const importTextarea=document.getElementById('importTextarea');
+  const importConfirm=document.getElementById('importConfirm');
+  const importReplace=document.getElementById('importReplace');
+
+  function openImportModal(){
+    importTextarea.value='';
+    importReplace.checked=false;
+    importModal.classList.remove('hidden');
+    importTextarea.focus();
+  }
+  function closeImportModal(){
+    importModal.classList.add('hidden');
+  }
+
+  function splitNames(s){
+    return s.split(/[、,，;；\s\/]+/).map(x=>x.trim()).filter(x=>x.length>0);
+  }
+
+  function parseRosterText(text){
+    const result={A:[],B:[],C:[],D:[]};
+    if(!text) return result;
+    const lines=text.replace(/\r\n/g,'\n').replace(/\r/g,'\n').split('\n');
+    let currentTeam=null;
+    const teamHeadRe=/^\s*([ABCD])\s*(?:组)?\s*[:：]?\s*(.*)$/i;
+    lines.forEach(rawLine=>{
+      const line=rawLine.trim();
+      if(!line) return;
+      const m=line.match(teamHeadRe);
+      if(m && (line.length===1 || /[:：]/.test(line) || /^[ABCD]\s*(?:组)?\s*$/i.test(line))){
+        currentTeam=m[1].toUpperCase();
+        const rest=(m[2]||'').trim();
+        if(rest){
+          splitNames(rest).forEach(n=>{
+            if(n && result[currentTeam].indexOf(n)<0) result[currentTeam].push(n);
+          });
+        }
+      }else if(currentTeam){
+        splitNames(line).forEach(n=>{
+          if(n && result[currentTeam].indexOf(n)<0) result[currentTeam].push(n);
+        });
+      }
+    });
+    return result;
+  }
+
+  function doImport(){
+    const text=importTextarea.value;
+    const parsed=parseRosterText(text);
+    const total=parsed.A.length+parsed.B.length+parsed.C.length+parsed.D.length;
+    if(total===0){ alert(t('importNoName')); return; }
+
+    if(importReplace.checked){
+      rosterData={A:parsed.A,B:parsed.B,C:parsed.C,D:parsed.D};
+    }else{
+      TEAMS.forEach(team=>{
+        parsed[team].forEach(name=>{
+          if(rosterData[team].indexOf(name)<0) rosterData[team].push(name);
+        });
+      });
+    }
+    saveRoster();
+    renderRosterAll();
+    closeImportModal();
+  }
+
+  importBtn.addEventListener('click',openImportModal);
+  importClose.addEventListener('click',closeImportModal);
+  importConfirm.addEventListener('click',doImport);
+  importModal.addEventListener('click',function(e){
+    if(e.target===importModal) closeImportModal();
+  });
+
+  // ============ 导出（按人员出勤） ============
+  function exportMonth(){
+    const y=currentYear,m=currentMonth;
+    const dim=new Date(y,m+1,0).getDate();
+    const wn=WEEK[currentLang];
+
+    const allPeople=[];
+    const seen={};
+    TEAMS.forEach(team=>{
+      (rosterData[team]||[]).forEach(name=>{
+        const key=team+'|'+name;
+        if(!seen[key]){seen[key]=true;allPeople.push({team:team,name:name,isBase:true});}
+      });
+    });
+    Object.keys(dailyOverrides).forEach(dk=>{
+      const parts=dk.split('-');
+      if(parseInt(parts[0])!==y||parseInt(parts[1])!==(m+1)) return;
+      TEAMS.forEach(team=>{
+        const ov=dailyOverrides[dk][team];
+        if(!ov) return;
+        (ov.extra||[]).forEach(name=>{
+          const key=team+'|'+name;
+          if(!seen[key]){seen[key]=true;allPeople.push({team:team,name:name,isBase:false});}
+        });
+      });
+    });
+    allPeople.sort((a,b)=>{
+      if(a.team!==b.team) return a.team<b.team?-1:1;
+      return a.name.localeCompare(b.name,'zh');
+    });
+
+    function personShiftOnDay(p,d){
+      return getPersonDayShift(p.team,p.name,y,m,d);
+    }
+    function countWorkDays(p){
+      let c=0;
+      for(let d=1;d<=dim;d++){
+        const s=personShiftOnDay(p,d);
+        if(s&&s!=='rest') c++;
+      }
+      return c;
+    }
+
+    let csv='\uFEFF';
+    csv+=t('csvTitle')+','+fMonth(y,m+1)+'\n';
+    csv+=t('csvCompliance')+','+t('csvComplianceItems')+'\n\n';
+
+    csv+=t('csvRoster')+'\n';
+    csv+=t('csvName')+','+t('csvTeam')+','+t('csvType')+'\n';
+    allPeople.forEach(p=>{
+      const tp=p.isBase?t('csvTypeBase'):t('csvTypeTemp');
+      csv+=`"${p.name}",${p.team}${t('csvTeamSuffix')},${tp}\n`;
+    });
+    csv+='\n';
+
+    csv+=t('csvAttendance')+'\n';
+    let hr=t('csvName')+','+t('csvTeam');
+    for(let d=1;d<=dim;d++){
+      const date=new Date(y,m,d);
+      let dl;
+      if(isHoliday(date)) dl='🎉'+t('csvHoliday');
+      else if(currentLang==='zh') dl='周'+wn[date.getDay()];
+      else dl=wn[date.getDay()];
+      hr+=','+d+'('+dl+')';
+    }
+    hr+=','+t('csvWorkDays');
+    csv+=hr+'\n';
+
+    allPeople.forEach(p=>{
+      let row=`"${p.name}",${p.team}${t('csvTeamSuffix')}`;
+      for(let d=1;d<=dim;d++){
+        const s=personShiftOnDay(p,d);
+        if(s===null){
+          row+=','+t('csvNotPresent');
+        }else{
+          row+=','+shiftName(s);
+        }
+      }
+      row+=','+countWorkDays(p);
+      csv+=row+'\n';
+    });
+    csv+='\n';
+
+    const ovKeys=Object.keys(dailyOverrides).filter(k=>{
+      const parts=k.split('-');
+      return parseInt(parts[0])===y&&parseInt(parts[1])===(m+1);
+    });
+    if(ovKeys.length>0){
+      csv+=t('csvDayOverrides')+'\n';
+      ovKeys.sort((a,b)=>parseInt(a.split('-')[2])-parseInt(b.split('-')[2])).forEach(dk=>{
+        const day=parseInt(dk.split('-')[2]);
+        const date=new Date(y,m,day);
+        const dl=currentLang==='zh'?'周'+wn[date.getDay()]:wn[date.getDay()];
+        csv+=day+'('+dl+')';
+        TEAMS.forEach(team=>{
+          const ov=dailyOverrides[dk][team];
+          if(ov){
+            const parts=[];
+            if((ov.removed||[]).length) parts.push('移除:'+ov.removed.join('、'));
+            if(ov.shifts){
+              const shiftParts=Object.keys(ov.shifts).map(n=>n+'='+shiftName(ov.shifts[n]));
+              if(shiftParts.length) parts.push('班次:'+shiftParts.join(' '));
+            }
+            if((ov.extra||[]).length) parts.push('+'+ov.extra.join('、'));
+            if(parts.length) csv+=','+team+t('csvTeamSuffix')+'('+parts.join(' | ')+')';
+          }
+        });
+        csv+='\n';
+      });
+      csv+='\n';
+    }
+
+    csv+=t('csvDailyCheck')+'\n';
+    for(let d=1;d<=dim;d++){
+      const date=new Date(y,m,d);
+      const cnt={morning:0,afternoon:0,night:0,rest:0};
+      TEAMS.forEach(team=>{
+        const s=getShift(team,date);
+        if(cnt[s]!==undefined) cnt[s]++;
+      });
+      const hm=isHoliday(date)?'🎉'+t('csvHoliday')+',':'';
+      csv+=hm+d+','+t('csvMorning')+':'+cnt.morning+','+t('csvAfternoon')+':'+cnt.afternoon+','+t('csvNight')+':'+cnt.night+','+t('csvRest')+':'+cnt.rest+'\n';
+    }
+
+    csv+='\n'+t('csvHolidayReminder')+'\n'+t('csvHolidayReminderLine')+'\n'+t('csvHolidayReminderLine2')+'\n\n';
+    csv+=t('csvHolidayList')+'\n';
+    let found=false;
+    for(let d=1;d<=dim;d++){
+      const date=new Date(y,m,d);
+      if(isHoliday(date)){
+        const wt=[];
+        TEAMS.forEach(team=>{
+          const s=getShift(team,date);
+          if(s!=='rest') wt.push(team+t('csvTeamSuffix')+'('+shiftName(s)+')');
+        });
+        const dl=currentLang==='zh'?'周'+wn[date.getDay()]:wn[date.getDay()];
+        csv+=d+'('+dl+'),'+t('csvWorkingTeams')+':'+(wt.length?wt.join(' / '):t('csvNone'))+'\n';
+        found=true;
+      }
+    }
+    if(!found) csv+=t('csvNoHoliday')+'\n';
+
+    const blob=new Blob([csv],{type:'text/csv;charset=utf-8;'});
+    const url=URL.createObjectURL(blob);
+    const a=document.createElement('a');
+    a.href=url;
+    a.download=t('csvFilePrefix')+'_'+y+'_'+(m+1)+'.csv';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
+
+  // ============ 事件 ============
+  const monthPicker=document.getElementById('monthPicker');
+  const todayBtn=document.getElementById('todayBtn');
+  const backBtn=document.getElementById('backBtn');
+  const exportBtn=document.getElementById('exportBtn');
+  const rosterInput=document.getElementById('rosterInput');
+  const addBtn=document.getElementById('addBtn');
+
+  function setCurrentMonth(){
+    const now=new Date();
+    const y=now.getFullYear();
+    const m=now.getMonth();
+    monthPicker.value=y+'-'+String(m+1).padStart(2,'0');
+    selectedDay=null;
+    document.getElementById('backBtn').classList.add('hidden');
+    document.getElementById('monthDisplay').classList.remove('selected');
+    updateModeTag();
+    renderMonth(y,m);
+    renderRosterAll();
+  }
+
+  function setLanguage(lang){
+    currentLang=lang;
+    try{localStorage.setItem(LANG_KEY,lang);}catch(e){}
+    document.querySelectorAll('.lang-btn').forEach(b=>{
+      b.classList.toggle('active',b.dataset.lang===lang);
+    });
+    updateStaticText();
+    renderMonth(currentYear,currentMonth);
+    renderRosterAll();
+  }
+
+  monthPicker.addEventListener('change',function(){
+    const val=this.value;
+    if(val){
+      const parts=val.split('-').map(Number);
+      selectedDay=null;
+      document.getElementById('backBtn').classList.add('hidden');
+      document.getElementById('monthDisplay').classList.remove('selected');
+      updateModeTag();
+      renderMonth(parts[0],parts[1]-1);
+      renderRosterAll();
+    }
+  });
+
+  todayBtn.addEventListener('click',setCurrentMonth);
+  backBtn.addEventListener('click',function(){
+    selectedDay=null;
+    document.getElementById('backBtn').classList.add('hidden');
+    document.getElementById('monthDisplay').classList.remove('selected');
+    updateModeTag();
+    renderMonth(currentYear,currentMonth);
+    renderRosterAll();
+  });
+  exportBtn.addEventListener('click',exportMonth);
+
+  document.querySelectorAll('.team-pick-btn').forEach(btn=>{
+    btn.addEventListener('click',function(){
+      document.querySelectorAll('.team-pick-btn').forEach(b=>b.classList.remove('active'));
+      this.classList.add('active');
+      currentTeam=this.dataset.team;
+      updateAddTargetHint();
+    });
+  });
+  document.querySelectorAll('.lang-btn').forEach(btn=>{
+    btn.addEventListener('click',function(){ setLanguage(this.dataset.lang); });
+  });
+  addBtn.addEventListener('click',addMember);
+  rosterInput.addEventListener('keydown',function(e){
+    if(e.key==='Enter'){e.preventDefault();addMember();}
+  });
+
+  // ============ 初始化 ============
+  try{
+    const sl=localStorage.getItem(LANG_KEY);
+    if(sl&&I18N[sl]) currentLang=sl;
+  }catch(e){}
+  loadRoster();
+  updateStaticText();
+  setCurrentMonth();
+  renderRosterAll();
+  document.querySelectorAll('.lang-btn').forEach(b=>{
+    b.classList.toggle('active',b.dataset.lang===currentLang);
+  });
+})();
+</script>
+</body>
+</html>
